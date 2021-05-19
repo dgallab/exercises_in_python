@@ -1,0 +1,41 @@
+x= readint("this better be an integer");
+e = 5*4*20;
+f=true;
+s = "quality string";
+
+print(false);
+
+if not f then
+    print("simple if statement");
+    end
+
+if 5<x and 100>99 and 0 == 1 then #should never print
+    print("compound if statement#1");
+    end
+
+if x<10 and 100>99 or 0 == 1 then 
+    print("compound if statement#2");
+    end
+
+while x>10 do #prints x-10 times or one time
+    x=x-1;
+    print(x);
+    end
+
+if 3>4 then #should print #4
+    print("#1");
+elseif s!="quality string" then
+    print("#2");
+    if 4==4 then
+        print("2.1");
+        end
+elseif 9-1!=8 then
+    print("#3");
+else
+    print("#4");
+end
+
+
+
+
+
