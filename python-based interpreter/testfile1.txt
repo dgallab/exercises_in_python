@@ -1,0 +1,80 @@
+a = false;
+b = 4+ readint("type an int");
+c = '5'+readstr("give me a d!"); 
+d = true;
+e = 5*4*20;
+f = c+"gjbro";
+g = b+e/b;
+h = 27;
+i = c+readstr("give me an a!")+c;
+j =  30 * readint("give me an n!")*b;
+g = readint("whats that spell?");
+i= c;
+#g = true; #g already assigned as an int
+#j = f; #j already assigned as an int
+#zom=zom+40; # not yet defined error
+
+while j+5>h and f == i do
+    z=h+5;
+    if a then
+     #   z="hello"; #must have same types as previous (parent environment)
+        z=h+4; 
+    end
+end
+
+#if g then # g must be a boolean type for simple bool expressions
+    #wha=4+50;
+#end
+    
+if h+5>g or f == i then #dual complex bool expressions
+    z="hi"; #different environments mean z can have 2 different types
+end
+
+if d then    
+    h=e+5; #must be an int because parent h is int
+end             
+
+
+while a!=d do
+    zom=h;
+end
+#zom =zom+4; #is an error because zom is only defined in a child environment
+
+#list_0=[true,"hello"]; #error because list is not homogenous
+list1=[1,2,3,4];
+g = list1[3];
+list2 = [true,false,true];
+list3 = ["hello"];
+list4 =["doing great"];
+if list1[1]>=list1[4] then #works because lists contain ints
+ g=6;
+end
+
+if list2[0] then 
+    g=5;
+   #lists=list3 + list2; #error because lists are different types
+    lists=list3+list3; #works because lists are homogenous
+end
+#x=3+"he"+5;
+list35=[];
+#ez= list35+5; #error because empty lists can only be added to lists 
+list35=list35+list4; #not an error
+#list35=5+list35+5;#uncomment so show that list35 now has a type
+#list1=list35; #list1 is already [INT], list 35 is an [STRING]
+list1[4]=list1[4]*list1[3];
+#x=list35+"be proud"; #cannot add [STRING] to STRING
+
+#z = list100[0];#error before defined
+#double nested lists
+listAB=[[3,10],[2,7],[5,6],[6,8]]; #works
+listBC=[[3,10],[],[5,6],[6,8]]; #also works
+#listBC=[[3,10],5,[5,6],[6,8]]; #returns an error
+#listCD=[[3,10],[[]],[5,6],[6,8]]; #returns an error
+#listDE=[[3,"hi"],[4,5],[5,6],[6,8]]; #returns an error
+Dlist = listAB+listBC; #it works
+#Elist = listAB + list35; #error cannot add string list to double int list
+#Flist = listAB + list1; #error cannot add int list to double int list
+
+
+
+#LIST =[[[3,10],[2,7]],[[5,6],[6,8]]];
