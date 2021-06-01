@@ -24,8 +24,34 @@ def path_weight(startnode,endnode,N):
             y=i
     return N[y][x]
 
+
+def Bellman_Ford(N,source):
     
-def Bellman_Ford(source,N):
+    inf = math.inf
+    Q={'u','v','x','y','z'}
+    dis = {'u': inf,'v': inf,'x': inf,'y':inf,'z':inf}
+    prev = {'u': None,'v':None,'x':None,'y':None,'z':None}
+    dis[source] = 0
+
+    for i in range(0,len(Q)-1):
+        for u in Q:
+            for v in Q:
+                if dis[u] + path_weight(u,v,N) < dis[v]:
+                    dis[v] = dis[u] + path_weight(u,v,N)
+                    prev[v]=u
+
+    for u in Q:
+        for v in Q:
+            if dis[u] + path_weight(u,v,N) < dis[v]:
+                print("a negative cycle exists")
+                    
+                
+    print(dis)
+    print(prev)
+    return (dis,prev)
+
+    
+def Bellman_Ford_alt(N,source):
   inf = math.inf
   vertices = N[0][1:len(N)]
   distances=[inf] * (len(N)-1)
@@ -78,10 +104,10 @@ def forw_table(source,goal,nodepairs):
 def main():
     N=create_adj_table()
     source = 'z'
-    vertices,predecessors = Bellman_Ford(source,N)
-    nodepairs = generate_edges(vertices,predecessors)
-    print("Forwarding Table for node " +str(source))
-    for i in range (1,len(N[0])-1):
-        print (str(N[0][i])+ "      " + str(source)+ "      " + forw_table(source,N[0][i],nodepairs))  
+    vertices,predecessors = Bellman_Ford(N,source)
+    #nodepairs = generate_edges(vertices,predecessors)
+    #print("Forwarding Table for node " +str(source))
+    #for i in range (1,len(N[0])-1):
+        #print (str(N[0][i])+ "      " + str(source)+ "      " + forw_table(source,N[0][i],nodepairs))  
         
 main()
