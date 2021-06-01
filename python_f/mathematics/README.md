@@ -1,0 +1,1 @@
+Various mathematical algorithms implemented in python, typically from arithmetic and linear algebra fields. Nothing super fancy. I do like the algorithm I devised for finding the determinant of a matrix.
